@@ -1,0 +1,1327 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Ethical Hacking | EduFlex Academy</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Inter", sans-serif;
+            background: #f8f6ef;
+            color: #102a43;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .container {
+            width: min(1120px, 90%);
+            margin: auto;
+        }
+
+        /* NAVBAR */
+
+        .navbar {
+            background: rgba(255, 253, 247, 0.96);
+            backdrop-filter: blur(15px);
+            border-bottom: 1px solid #e3ddd2;
+            padding: 16px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 25px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 22px;
+            font-weight: 800;
+            color: #102a43;
+        }
+
+        .logo-icon {
+            width: 39px;
+            height: 39px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 11px;
+            background: linear-gradient(135deg, #071d33, #1d527d);
+            color: white;
+            font-weight: 800;
+            box-shadow: 0 8px 20px rgba(7, 29, 51, 0.22);
+        }
+
+        .logo span span {
+            color: #1d527d;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+
+        .nav-links a {
+            color: #526273;
+            font-size: 14px;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #1d527d;
+        }
+
+        .nav-btn {
+            padding: 10px 17px;
+            border-radius: 10px;
+            background: #0d2945;
+            color: white;
+            font-size: 13px;
+            font-weight: 700;
+            transition: 0.3s;
+        }
+
+        .nav-btn:hover {
+            background: #1d527d;
+            transform: translateY(-2px);
+        }
+
+        /* HERO */
+
+        .hero {
+            position: relative;
+            overflow: hidden;
+            padding: 100px 0;
+            background:
+                radial-gradient(
+                    circle at 82% 20%,
+                    rgba(52, 124, 167, 0.28),
+                    transparent 28%
+                ),
+                radial-gradient(
+                    circle at 15% 85%,
+                    rgba(29, 82, 125, 0.22),
+                    transparent 30%
+                ),
+                linear-gradient(
+                    135deg,
+                    #071d33,
+                    #0d2945,
+                    #173f63
+                );
+            color: white;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            width: 370px;
+            height: 370px;
+            border-radius: 50%;
+            border: 1px solid rgba(255,255,255,0.10);
+            right: -120px;
+            top: 50px;
+        }
+
+        .hero::after {
+            content: "";
+            position: absolute;
+            width: 220px;
+            height: 220px;
+            border-radius: 50%;
+            border: 1px solid rgba(255,255,255,0.07);
+            left: -100px;
+            bottom: -100px;
+        }
+
+        .hero-container {
+            display: grid;
+            grid-template-columns: 1.3fr 0.7fr;
+            align-items: center;
+            gap: 70px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 9px 16px;
+            border: 1px solid rgba(255,255,255,0.20);
+            background: rgba(255,255,255,0.08);
+            border-radius: 30px;
+            font-size: 13px;
+            margin-bottom: 22px;
+            color: #eef4f8;
+        }
+
+        .hero h1 {
+            font-family: "Poppins", sans-serif;
+            font-size: clamp(43px, 6vw, 68px);
+            line-height: 1.08;
+            margin-bottom: 22px;
+        }
+
+        .hero h1 span {
+            display: block;
+            color: #b9d4e5;
+        }
+
+        .hero p {
+            max-width: 700px;
+            color: #dce4eb;
+            font-size: 17px;
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 13px 20px;
+            border-radius: 11px;
+            font-weight: 700;
+            transition: 0.3s;
+        }
+
+        .primary {
+            background: #fffdf7;
+            color: #0d2945;
+        }
+
+        .primary:hover {
+            background: #ffffff;
+            transform: translateY(-3px);
+        }
+
+        .secondary {
+            border: 1px solid rgba(255,255,255,0.32);
+            color: white;
+        }
+
+        .secondary:hover {
+            background: rgba(255,255,255,0.08);
+            transform: translateY(-3px);
+        }
+
+        /* HERO CARD */
+
+        .hero-card {
+            padding: 32px;
+            border-radius: 25px;
+            background: rgba(255,255,255,0.09);
+            border: 1px solid rgba(255,255,255,0.18);
+            backdrop-filter: blur(15px);
+            box-shadow: 0 25px 60px rgba(0,0,0,0.22);
+        }
+
+        .hero-icon {
+            width: 70px;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255,255,255,0.10);
+            border-radius: 20px;
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .hero-card h3 {
+            font-family: "Poppins", sans-serif;
+            font-size: 23px;
+            margin-bottom: 8px;
+        }
+
+        .hero-card p {
+            font-size: 13px;
+            color: #dce4eb;
+            margin-bottom: 25px;
+        }
+
+        .hero-info {
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            gap: 10px;
+        }
+
+        .hero-info div {
+            padding: 12px 8px;
+            text-align: center;
+            border-radius: 12px;
+            background: rgba(255,255,255,0.08);
+        }
+
+        .hero-info strong {
+            display: block;
+            font-size: 15px;
+        }
+
+        .hero-info small {
+            color: #c6d5df;
+            font-size: 10px;
+        }
+
+        /* GENERAL SECTIONS */
+
+        section:not(.hero) {
+            padding: 90px 0;
+        }
+
+        .section-heading {
+            text-align: center;
+            max-width: 760px;
+            margin: 0 auto 45px;
+        }
+
+        .section-tag {
+            color: #1d527d;
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+        }
+
+        .section-heading h2 {
+            font-family: "Poppins", sans-serif;
+            font-size: clamp(30px,4vw,43px);
+            line-height: 1.2;
+            margin: 10px 0 15px;
+            color: #102a43;
+        }
+
+        .section-heading h2 span {
+            color: #1d527d;
+        }
+
+        .section-heading p {
+            color: #647382;
+        }
+
+        /* SYLLABUS */
+
+        .syllabus-section {
+            background: #fffdf7;
+        }
+
+        .syllabus-grid {
+            display: grid;
+            grid-template-columns: repeat(2,1fr);
+            gap: 20px;
+        }
+
+        .syllabus-card {
+            padding: 28px;
+            border-radius: 20px;
+            border: 1px solid #e2ddd3;
+            background: #f8f6ef;
+            transition: 0.3s;
+        }
+
+        .syllabus-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 18px 40px rgba(16,42,67,0.10);
+            border-color: #b9cbd7;
+        }
+
+        .module-number {
+            color: #1d527d;
+            font-weight: 800;
+            font-size: 13px;
+            margin-bottom: 12px;
+        }
+
+        .syllabus-card h3 {
+            font-family: "Poppins", sans-serif;
+            font-size: 20px;
+            margin-bottom: 12px;
+            color: #102a43;
+        }
+
+        .syllabus-card p {
+            color: #6d7985;
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+
+        .topics {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .topics span {
+            padding: 6px 10px;
+            border-radius: 20px;
+            background: #e8eff4;
+            color: #17476b;
+            font-size: 11px;
+            font-weight: 700;
+        }
+
+        /* LAB */
+
+        .lab-section {
+            background: #f8f6ef;
+        }
+
+        .lab-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+        }
+
+        .lab-box {
+            padding: 32px;
+            border-radius: 22px;
+            background: #fffdf7;
+            border: 1px solid #e2ddd3;
+            transition: 0.3s;
+        }
+
+        .lab-box:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 15px 35px rgba(16,42,67,0.09);
+        }
+
+        .lab-box h3 {
+            font-family: "Poppins", sans-serif;
+            margin-bottom: 15px;
+            font-size: 22px;
+            color: #102a43;
+        }
+
+        .lab-box p {
+            color: #6d7985;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+
+        .lab-list {
+            list-style: none;
+        }
+
+        .lab-list li {
+            padding: 11px 0;
+            border-bottom: 1px solid #e7e1d7;
+            color: #4f5d69;
+            font-size: 14px;
+        }
+
+        .lab-list li::before {
+            content: "✓";
+            color: #1d527d;
+            font-weight: 800;
+            margin-right: 10px;
+        }
+
+        /* OUTCOMES */
+
+        .outcomes-section {
+            background: #fffdf7;
+        }
+
+        .outcomes-grid {
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            gap: 18px;
+        }
+
+        .outcome-card {
+            padding: 25px;
+            border-radius: 18px;
+            background: #f8f6ef;
+            border: 1px solid #e2ddd3;
+            transition: 0.3s;
+        }
+
+        .outcome-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(16,42,67,0.09);
+        }
+
+        .outcome-card span {
+            font-size: 27px;
+        }
+
+        .outcome-card h3 {
+            margin: 12px 0 7px;
+            font-size: 17px;
+            color: #102a43;
+        }
+
+        .outcome-card p {
+            color: #6d7985;
+            font-size: 13px;
+        }
+
+        /* CTA */
+
+        .cta-section {
+            background: #f8f6ef;
+        }
+
+        .cta-box {
+            padding: 55px;
+            border-radius: 25px;
+            background: linear-gradient(
+                135deg,
+                #071d33,
+                #173f63
+            );
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 30px;
+            overflow: hidden;
+        }
+
+        .cta-content {
+            max-width: 720px;
+        }
+
+        .cta-content .section-tag {
+            color: #b9d4e5;
+        }
+
+        .cta-content h2 {
+            font-family: "Poppins", sans-serif;
+            font-size: 38px;
+            margin: 10px 0;
+        }
+
+        .cta-content h2 span {
+            color: #b9d4e5;
+        }
+
+        .cta-content p {
+            color: #dce4eb;
+            margin-bottom: 22px;
+        }
+
+        .white-btn {
+            display: inline-block;
+            padding: 13px 20px;
+            border-radius: 10px;
+            background: #fffdf7;
+            color: #0d2945;
+            font-weight: 800;
+            transition: 0.3s;
+        }
+
+        .white-btn:hover {
+            transform: translateY(-3px);
+            background: white;
+        }
+
+        .cta-symbol {
+            font-size: 100px;
+            opacity: 0.15;
+        }
+
+        /* FOOTER */
+
+        .footer {
+            background: #071d33;
+            color: #dce4eb;
+            padding: 30px 0;
+        }
+
+        .footer-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 25px;
+        }
+
+        .footer .logo {
+            color: white;
+        }
+
+        .footer .logo-icon {
+            background: linear-gradient(
+                135deg,
+                #1d527d,
+                #347ca7
+            );
+        }
+
+        .footer p {
+            color: #aebdca;
+            font-size: 12px;
+            margin-top: 5px;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .footer-links a {
+            font-size: 12px;
+            color: #c9d5df;
+            transition: 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        .footer-copy {
+            font-size: 11px;
+            color: #aebdca;
+        }
+
+        /* RESPONSIVE */
+
+        @media(max-width:850px) {
+
+            .hero-container,
+            .lab-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .syllabus-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .outcomes-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .hero-card {
+                max-width: 500px;
+            }
+
+            .footer-container {
+                flex-direction: column;
+                text-align: center;
+            }
+
+        }
+
+        @media(max-width:600px) {
+
+            section:not(.hero) {
+                padding: 65px 0;
+            }
+
+            .hero {
+                padding: 70px 0;
+            }
+
+            .hero h1 {
+                font-size: 43px;
+            }
+
+            .hero-card {
+                padding: 25px;
+            }
+
+            .outcomes-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-box {
+                padding: 35px 25px;
+            }
+
+            .cta-symbol {
+                display: none;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+
+<header class="navbar">
+
+    <div class="container nav-container">
+
+        <a href="../index.html" class="logo">
+
+            <div class="logo-icon">
+                E
+            </div>
+
+            <span>
+                Edu<span>Flex</span>
+            </span>
+
+        </a>
+
+        <nav class="nav-links">
+
+            <a href="../index.html">
+                Home
+            </a>
+
+            <a href="../pages/cybersecurity/index.html">
+                Cybersecurity Track
+            </a>
+
+            <a href="../index.html#about">
+                About
+            </a>
+
+            <a href="../index.html#why">
+                Why Us
+            </a>
+
+        </nav>
+
+        <!-- REGISTRATION LINK ADDED -->
+
+        <a href="../registration.html" class="nav-btn">
+            Enroll Now
+        </a>
+
+    </div>
+
+</header>
+
+
+<!-- ================= HERO ================= -->
+
+<section class="hero">
+
+    <div class="container hero-container">
+
+        <div>
+
+            <div class="badge">
+                🛡️ CYBERSECURITY COURSE
+            </div>
+
+            <h1>
+
+                Ethical Hacking
+
+                <span>
+                    Master the Fundamentals.
+                </span>
+
+            </h1>
+
+            <p>
+
+                Learn the fundamentals of ethical hacking,
+                cybersecurity, vulnerabilities and responsible
+                security testing through a practical,
+                beginner-friendly learning experience.
+
+            </p>
+
+            <div class="buttons">
+
+                <!-- REGISTRATION LINK ADDED -->
+
+                <a
+                    href="../registration.html"
+                    class="btn primary">
+
+                    Enroll Now →
+
+                </a>
+
+                <a
+                    href="../pages/cybersecurity/index.html"
+                    class="btn secondary">
+
+                    ← Cybersecurity Track
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="hero-card">
+
+            <div class="hero-icon">
+                🛡️
+            </div>
+
+            <h3>
+                Ethical Hacking
+            </h3>
+
+            <p>
+                Cybersecurity & Penetration Testing Fundamentals
+            </p>
+
+            <div class="hero-info">
+
+                <div>
+                    <strong>Beginner</strong>
+                    <small>Level</small>
+                </div>
+
+                <div>
+                    <strong>6</strong>
+                    <small>Modules</small>
+                </div>
+
+                <div>
+                    <strong>24/7</strong>
+                    <small>Access</small>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= DETAILED SYLLABUS ================= -->
+
+<section
+    class="syllabus-section"
+    id="syllabus">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <span class="section-tag">
+                DETAILED SYLLABUS
+            </span>
+
+            <h2>
+
+                Learn Ethical Hacking
+
+                <span>
+                    Step by Step.
+                </span>
+
+            </h2>
+
+            <p>
+
+                Follow a structured syllabus designed to build
+                your cybersecurity knowledge from the basics
+                to practical security testing concepts.
+
+            </p>
+
+        </div>
+
+
+        <div class="syllabus-grid">
+
+            <div class="syllabus-card">
+
+                <div class="module-number">
+                    MODULE 01
+                </div>
+
+                <h3>
+                    Cybersecurity Fundamentals
+                </h3>
+
+                <p>
+                    Understand the basic concepts behind
+                    cybersecurity and digital protection.
+                </p>
+
+                <div class="topics">
+
+                    <span>Cybersecurity</span>
+                    <span>CIA Triad</span>
+                    <span>Digital Assets</span>
+
+                </div>
+
+            </div>
+
+
+            <div class="syllabus-card">
+
+                <div class="module-number">
+                    MODULE 02
+                </div>
+
+                <h3>
+                    Ethical Hacking Concepts
+                </h3>
+
+                <p>
+                    Learn what ethical hackers do and how
+                    authorized security testing works.
+                </p>
+
+                <div class="topics">
+
+                    <span>Ethical Hacking</span>
+                    <span>Hackers</span>
+                    <span>Authorization</span>
+
+                </div>
+
+            </div>
+
+
+            <div class="syllabus-card">
+
+                <div class="module-number">
+                    MODULE 03
+                </div>
+
+                <h3>
+                    Threats & Vulnerabilities
+                </h3>
+
+                <p>
+                    Identify common cyber threats and understand
+                    how vulnerabilities can affect systems.
+                </p>
+
+                <div class="topics">
+
+                    <span>Threats</span>
+                    <span>Vulnerabilities</span>
+                    <span>Risk</span>
+
+                </div>
+
+            </div>
+
+
+            <div class="syllabus-card">
+
+                <div class="module-number">
+                    MODULE 04
+                </div>
+
+                <h3>
+                    Reconnaissance Basics
+                </h3>
+
+                <p>
+                    Understand the purpose of information gathering
+                    during an authorized security assessment.
+                </p>
+
+                <div class="topics">
+
+                    <span>Information Gathering</span>
+                    <span>Reconnaissance</span>
+                    <span>OSINT</span>
+
+                </div>
+
+            </div>
+
+
+            <div class="syllabus-card">
+
+                <div class="module-number">
+                    MODULE 05
+                </div>
+
+                <h3>
+                    Security Testing
+                </h3>
+
+                <p>
+                    Learn the basic stages and principles of
+                    responsible penetration testing.
+                </p>
+
+                <div class="topics">
+
+                    <span>Testing</span>
+                    <span>Scanning</span>
+                    <span>Reporting</span>
+
+                </div>
+
+            </div>
+
+
+            <div class="syllabus-card">
+
+                <div class="module-number">
+                    MODULE 06
+                </div>
+
+                <h3>
+                    Security Best Practices
+                </h3>
+
+                <p>
+                    Learn how security professionals reduce risks
+                    and communicate security findings responsibly.
+                </p>
+
+                <div class="topics">
+
+                    <span>Defense</span>
+                    <span>Reporting</span>
+                    <span>Best Practices</span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= LAB ================= -->
+
+<section class="lab-section">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <span class="section-tag">
+                HANDS-ON LAB REQUIREMENTS
+            </span>
+
+            <h2>
+
+                Practice in a
+
+                <span>
+                    Safe Lab Environment.
+                </span>
+
+            </h2>
+
+            <p>
+
+                Practical exercises should always be performed
+                in systems you own or have explicit permission
+                to test.
+
+            </p>
+
+        </div>
+
+
+        <div class="lab-grid">
+
+            <div class="lab-box">
+
+                <h3>
+                    🧰 Required Setup
+                </h3>
+
+                <p>
+                    Students can prepare the following basic
+                    environment for authorized cybersecurity labs.
+                </p>
+
+                <ul class="lab-list">
+
+                    <li>Computer or laptop</li>
+                    <li>Stable internet connection</li>
+                    <li>Virtual machine software</li>
+                    <li>Isolated practice environment</li>
+                    <li>Basic command-line knowledge</li>
+
+                </ul>
+
+            </div>
+
+
+            <div class="lab-box">
+
+                <h3>
+                    🧪 Practical Activities
+                </h3>
+
+                <p>
+                    Hands-on activities focus on learning concepts
+                    safely without targeting real systems.
+                </p>
+
+                <ul class="lab-list">
+
+                    <li>Identify common vulnerabilities</li>
+                    <li>Practice reconnaissance in a lab</li>
+                    <li>Perform basic security scans</li>
+                    <li>Analyze security findings</li>
+                    <li>Create a simple security report</li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= OUTCOMES ================= -->
+
+<section class="outcomes-section">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <span class="section-tag">
+                LEARNING OUTCOMES
+            </span>
+
+            <h2>
+
+                What You Will
+
+                <span>
+                    Be Able to Do.
+                </span>
+
+            </h2>
+
+        </div>
+
+
+        <div class="outcomes-grid">
+
+            <div class="outcome-card">
+
+                <span>🛡️</span>
+
+                <h3>
+                    Understand Security
+                </h3>
+
+                <p>
+                    Explain core cybersecurity concepts and risks.
+                </p>
+
+            </div>
+
+
+            <div class="outcome-card">
+
+                <span>🔎</span>
+
+                <h3>
+                    Identify Risks
+                </h3>
+
+                <p>
+                    Recognize common vulnerabilities and threats.
+                </p>
+
+            </div>
+
+
+            <div class="outcome-card">
+
+                <span>💻</span>
+
+                <h3>
+                    Practice Safely
+                </h3>
+
+                <p>
+                    Apply concepts inside authorized lab environments.
+                </p>
+
+            </div>
+
+
+            <div class="outcome-card">
+
+                <span>📋</span>
+
+                <h3>
+                    Report Findings
+                </h3>
+
+                <p>
+                    Communicate security observations clearly.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= CTA ================= -->
+
+<section class="cta-section">
+
+    <div class="container">
+
+        <div class="cta-box">
+
+            <div class="cta-content">
+
+                <span class="section-tag">
+                    START YOUR JOURNEY
+                </span>
+
+                <h2>
+
+                    Ready to Learn
+
+                    <span>
+                        Ethical Hacking?
+                    </span>
+
+                </h2>
+
+                <p>
+
+                    Build your cybersecurity foundation and
+                    develop practical knowledge through safe,
+                    authorized learning activities.
+
+                </p>
+
+                <!-- REGISTRATION LINK ADDED -->
+
+                <a
+                    href="../registration.html"
+                    class="white-btn">
+
+                    Enroll Now →
+
+                </a>
+
+            </div>
+
+
+            <div class="cta-symbol">
+                🛡️
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer class="footer">
+
+    <div class="container footer-container">
+
+        <div>
+
+            <a href="../index.html" class="logo">
+
+                <div class="logo-icon">
+                    E
+                </div>
+
+                <span>
+                    Edu<span>Flex</span>
+                </span>
+
+            </a>
+
+            <p>
+                Learn. Grow. Succeed.
+            </p>
+
+        </div>
+
+
+        <div class="footer-links">
+
+            <a href="../index.html">
+                Home
+            </a>
+
+            <a href="../pages/cybersecurity/index.html">
+                Cybersecurity Track
+            </a>
+
+            <a href="../index.html#courses">
+                Courses
+            </a>
+
+            <a href="../registration.html">
+                Register
+            </a>
+
+        </div>
+
+
+        <div class="footer-copy">
+
+            © 2026 EduFlex Academy.
+            All rights reserved.
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+</body>
+</html>

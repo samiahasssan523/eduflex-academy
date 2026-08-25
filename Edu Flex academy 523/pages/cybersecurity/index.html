@@ -1,0 +1,1113 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Cybersecurity & Ethical Hacking | EduFlex Academy</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@600;700;800&display=swap"
+        rel="stylesheet">
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Inter", sans-serif;
+            background: #f8f6ef;
+            color: #102a43;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .container {
+            width: min(1120px, 90%);
+            margin: auto;
+        }
+
+        /* ================= NAVBAR ================= */
+
+        .navbar {
+            background: #fffdf7;
+            border-bottom: 1px solid #e4dfd4;
+            padding: 17px 0;
+        }
+
+        .nav-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 23px;
+            font-weight: 800;
+            color: #102a43;
+        }
+
+        .logo span {
+            color: #1d527d;
+        }
+
+        .back {
+            color: #526273;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .back:hover {
+            color: #1d527d;
+        }
+
+        /* ================= HERO ================= */
+
+        .hero {
+            min-height: 680px;
+            display: flex;
+            align-items: center;
+            background:
+                radial-gradient(circle at 80% 20%, rgba(91, 150, 190, .20), transparent 30%),
+                linear-gradient(135deg, #071d33, #0d2945, #173f63);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::after {
+            content: "";
+            position: absolute;
+            width: 350px;
+            height: 350px;
+            right: -100px;
+            bottom: -150px;
+            border-radius: 50%;
+            background: rgba(255,255,255,.05);
+        }
+
+        .hero-content {
+            max-width: 850px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .badge {
+            display: inline-flex;
+            padding: 9px 17px;
+            border-radius: 30px;
+            background: rgba(255,255,255,.09);
+            border: 1px solid rgba(255,255,255,.18);
+            font-size: 14px;
+            margin-bottom: 24px;
+        }
+
+        .hero h1 {
+            font-family: "Poppins", sans-serif;
+            font-size: clamp(42px, 6vw, 68px);
+            line-height: 1.08;
+            margin-bottom: 25px;
+        }
+
+        .hero h1 span {
+            color: #d9cfae;
+        }
+
+        .hero p {
+            max-width: 760px;
+            color: #dce4eb;
+            font-size: 18px;
+            line-height: 1.8;
+            margin-bottom: 32px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 14px 23px;
+            border-radius: 11px;
+            font-weight: 700;
+            transition: .3s;
+        }
+
+        .primary {
+            background: #fffdf7;
+            color: #0d2945;
+        }
+
+        .secondary {
+            color: white;
+            border: 1px solid rgba(255,255,255,.35);
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+        }
+
+        .stats {
+            display: flex;
+            gap: 55px;
+            margin-top: 48px;
+            flex-wrap: wrap;
+        }
+
+        .stat strong {
+            display: block;
+            font-size: 25px;
+        }
+
+        .stat span {
+            color: #c6d1db;
+            font-size: 13px;
+        }
+
+        /* ================= SECTION HEADING ================= */
+
+        .section-heading {
+            text-align: center;
+            max-width: 760px;
+            margin: 0 auto 45px;
+        }
+
+        .section-tag {
+            color: #1d527d;
+            font-size: 13px;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+        }
+
+        .section-heading h2 {
+            font-family: "Poppins", sans-serif;
+            font-size: clamp(30px, 4vw, 42px);
+            line-height: 1.2;
+            margin: 12px 0 18px;
+        }
+
+        .section-heading h2 span {
+            color: #1d527d;
+        }
+
+        .section-heading p {
+            color: #647382;
+            line-height: 1.8;
+        }
+
+        /* ================= OVERVIEW ================= */
+
+        .track-overview {
+            padding: 90px 0;
+            background: #f8f6ef;
+        }
+
+        .overview-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+        }
+
+        .overview-card {
+            padding: 30px;
+            background: #fffdf7;
+            border: 1px solid #e3ddd2;
+            border-radius: 18px;
+            transition: .3s;
+        }
+
+        .overview-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 18px 40px rgba(16,42,67,.10);
+        }
+
+        .overview-icon {
+            width: 55px;
+            height: 55px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 15px;
+            background: #edf3f7;
+            font-size: 27px;
+            margin-bottom: 20px;
+        }
+
+        .overview-card h3 {
+            margin-bottom: 10px;
+        }
+
+        .overview-card p {
+            color: #6d7985;
+            font-size: 14px;
+            line-height: 1.7;
+        }
+
+        /* ================= SKILLS ================= */
+
+        .skills-section {
+            padding: 90px 0;
+            background: #fffdf7;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .skill-card {
+            display: flex;
+            gap: 18px;
+            padding: 27px;
+            background: #f8f6ef;
+            border: 1px solid #e4ded4;
+            border-radius: 17px;
+            transition: .3s;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(16,42,67,.09);
+        }
+
+        .skill-number {
+            font-weight: 800;
+            color: #1d527d;
+            font-size: 14px;
+        }
+
+        .skill-card h3 {
+            margin-bottom: 8px;
+            font-size: 18px;
+        }
+
+        .skill-card p {
+            color: #6d7985;
+            font-size: 14px;
+        }
+
+        /* ================= COURSES ================= */
+
+        .courses-section {
+            padding: 90px 0;
+            background: #f8f6ef;
+        }
+
+        .course-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .course-card {
+            background: #fffdf7;
+            border: 1px solid #e2ddd3;
+            border-radius: 20px;
+            overflow: hidden;
+            transition: .3s;
+        }
+
+        .course-card:hover {
+            transform: translateY(-7px);
+            box-shadow: 0 20px 45px rgba(16,42,67,.12);
+        }
+
+        .course-card-top {
+            height: 170px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            color: white;
+        }
+
+        .ethical-card {
+            background: linear-gradient(135deg, #0d2945, #245d87);
+        }
+
+        .network-card {
+            background: linear-gradient(135deg, #173f63, #347ca7);
+        }
+
+        .corporate-card {
+            background: linear-gradient(135deg, #102a43, #526f88);
+        }
+
+        .course-badge {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            padding: 6px 10px;
+            border-radius: 20px;
+            background: rgba(255,255,255,.15);
+            border: 1px solid rgba(255,255,255,.25);
+            font-size: 10px;
+            font-weight: 800;
+        }
+
+        .course-icon {
+            font-size: 52px;
+        }
+
+        .course-content {
+            padding: 27px;
+        }
+
+        .course-category {
+            color: #1d527d;
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: 1px;
+        }
+
+        .course-content h3 {
+            font-family: "Poppins", sans-serif;
+            font-size: 21px;
+            margin: 9px 0 12px;
+        }
+
+        .course-content p {
+            color: #6d7985;
+            font-size: 14px;
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+
+        .course-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #6c7884;
+            font-size: 12px;
+            margin-bottom: 20px;
+        }
+
+        .course-btn {
+            display: inline-block;
+            padding: 11px 17px;
+            border-radius: 9px;
+            background: #0d2945;
+            color: white;
+            font-size: 13px;
+            font-weight: 700;
+        }
+
+        .course-btn:hover {
+            background: #1d527d;
+        }
+
+        /* ================= CTA ================= */
+
+        .track-cta {
+            padding: 80px 0;
+            background: #fffdf7;
+        }
+
+        .cta-box {
+            padding: 55px;
+            border-radius: 25px;
+            background: linear-gradient(135deg, #071d33, #173f63);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 30px;
+            overflow: hidden;
+        }
+
+        .cta-content {
+            max-width: 700px;
+        }
+
+        .cta-content .section-tag {
+            color: #d9cfae;
+        }
+
+        .cta-content h2 {
+            font-family: "Poppins", sans-serif;
+            font-size: clamp(30px, 4vw, 43px);
+            line-height: 1.2;
+            margin: 12px 0 16px;
+        }
+
+        .cta-content h2 span {
+            color: #d9cfae;
+        }
+
+        .cta-content p {
+            color: #dce4eb;
+            margin-bottom: 25px;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .cta-primary,
+        .cta-secondary {
+            padding: 13px 20px;
+            border-radius: 10px;
+            font-weight: 700;
+        }
+
+        .cta-primary {
+            background: white;
+            color: #0d2945;
+        }
+
+        .cta-secondary {
+            color: white;
+            border: 1px solid rgba(255,255,255,.3);
+        }
+
+        .cta-symbol {
+            font-size: 100px;
+            opacity: .15;
+        }
+
+        /* ================= FOOTER ================= */
+
+        footer {
+            background: #071d33;
+            color: #dce4eb;
+            text-align: center;
+            padding: 25px;
+            font-size: 13px;
+        }
+
+        /* ================= RESPONSIVE ================= */
+
+        @media (max-width: 850px) {
+
+            .overview-grid,
+            .skills-grid,
+            .course-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .cta-box {
+                padding: 40px;
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            .nav-container {
+                width: 92%;
+            }
+
+            .back {
+                font-size: 12px;
+            }
+
+            .hero {
+                min-height: auto;
+                padding: 70px 0;
+            }
+
+            .hero h1 {
+                font-size: 42px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .stats {
+                gap: 25px;
+            }
+
+            .overview-grid,
+            .skills-grid,
+            .course-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .track-overview,
+            .skills-section,
+            .courses-section {
+                padding: 65px 0;
+            }
+
+            .cta-box {
+                padding: 35px 25px;
+            }
+
+            .cta-symbol {
+                display: none;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+
+    <header class="navbar">
+
+        <div class="container nav-container">
+
+            <a href="../../index.html" class="logo">
+                Edu<span>Flex</span>
+            </a>
+
+            <a href="../../index.html" class="back">
+                ← Back to Home
+            </a>
+
+        </div>
+
+    </header>
+
+
+    <!-- ================= HERO ================= -->
+
+    <section class="hero">
+
+        <div class="container">
+
+            <div class="hero-content">
+
+                <div class="badge">
+                    🛡️ Cybersecurity Learning Track
+                </div>
+
+                <h1>
+                    Cybersecurity &
+                    <span>Ethical Hacking</span>
+                </h1>
+
+                <p>
+                    Build practical cybersecurity skills, understand
+                    ethical hacking concepts, protect digital systems,
+                    and prepare yourself for a career in cybersecurity.
+                </p>
+
+                <div class="buttons">
+
+                    <a href="#courses" class="btn primary">
+                        Explore Courses →
+                    </a>
+
+                    <a href="../../index.html" class="btn secondary">
+                        ← Back to Home
+                    </a>
+
+                </div>
+
+                <div class="stats">
+
+                    <div class="stat">
+                        <strong>3</strong>
+                        <span>Professional Courses</span>
+                    </div>
+
+                    <div class="stat">
+                        <strong>Beginner</strong>
+                        <span>Friendly Learning</span>
+                    </div>
+
+                    <div class="stat">
+                        <strong>Career</strong>
+                        <span>Focused Skills</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= TRACK OVERVIEW ================= -->
+
+    <section class="track-overview">
+
+        <div class="container">
+
+            <div class="section-heading">
+
+                <span class="section-tag">
+                    TRACK OVERVIEW
+                </span>
+
+                <h2>
+                    Build Your
+                    <span>Cybersecurity Foundation.</span>
+                </h2>
+
+                <p>
+                    This learning track introduces students to the
+                    fundamentals of cybersecurity, ethical hacking,
+                    network protection and corporate security.
+                </p>
+
+            </div>
+
+            <div class="overview-grid">
+
+                <div class="overview-card">
+
+                    <div class="overview-icon">
+                        🛡️
+                    </div>
+
+                    <h3>
+                        Cybersecurity Fundamentals
+                    </h3>
+
+                    <p>
+                        Understand common cyber threats, vulnerabilities,
+                        security concepts and basic protection techniques.
+                    </p>
+
+                </div>
+
+
+                <div class="overview-card">
+
+                    <div class="overview-icon">
+                        💻
+                    </div>
+
+                    <h3>
+                        Hands-On Learning
+                    </h3>
+
+                    <p>
+                        Develop practical knowledge through real-world
+                        cybersecurity examples and activities.
+                    </p>
+
+                </div>
+
+
+                <div class="overview-card">
+
+                    <div class="overview-icon">
+                        🎯
+                    </div>
+
+                    <h3>
+                        Career Focused
+                    </h3>
+
+                    <p>
+                        Build useful skills that support your academic
+                        and future cybersecurity career.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= TARGET SKILLS ================= -->
+
+    <section class="skills-section">
+
+        <div class="container">
+
+            <div class="section-heading">
+
+                <span class="section-tag">
+                    TARGET SKILLS
+                </span>
+
+                <h2>
+                    Skills You Will
+                    <span>Develop.</span>
+                </h2>
+
+                <p>
+                    Develop essential cybersecurity knowledge and
+                    practical skills through this learning track.
+                </p>
+
+            </div>
+
+
+            <div class="skills-grid">
+
+                <div class="skill-card">
+
+                    <span class="skill-number">
+                        01
+                    </span>
+
+                    <div>
+                        <h3>Ethical Hacking</h3>
+
+                        <p>
+                            Understand ethical hacking concepts,
+                            vulnerabilities and penetration testing basics.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="skill-card">
+
+                    <span class="skill-number">
+                        02
+                    </span>
+
+                    <div>
+                        <h3>Network Security</h3>
+
+                        <p>
+                            Learn how networks are protected from
+                            unauthorized access and cyber threats.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="skill-card">
+
+                    <span class="skill-number">
+                        03
+                    </span>
+
+                    <div>
+                        <h3>Threat Detection</h3>
+
+                        <p>
+                            Identify common cybersecurity threats,
+                            attacks and security vulnerabilities.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="skill-card">
+
+                    <span class="skill-number">
+                        04
+                    </span>
+
+                    <div>
+                        <h3>Security Awareness</h3>
+
+                        <p>
+                            Understand security best practices for
+                            protecting digital information and systems.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="skill-card">
+
+                    <span class="skill-number">
+                        05
+                    </span>
+
+                    <div>
+                        <h3>Corporate Security</h3>
+
+                        <p>
+                            Learn how organizations manage cybersecurity
+                            risks and protect valuable business data.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="skill-card">
+
+                    <span class="skill-number">
+                        06
+                    </span>
+
+                    <div>
+                        <h3>Security Best Practices</h3>
+
+                        <p>
+                            Apply essential security practices to reduce
+                            risks and improve overall protection.
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= COURSE CARDS ================= -->
+
+    <section class="courses-section" id="courses">
+
+        <div class="container">
+
+            <div class="section-heading">
+
+                <span class="section-tag">
+                    COURSES IN THIS TRACK
+                </span>
+
+                <h2>
+                    Choose Your
+                    <span>Cybersecurity Course.</span>
+                </h2>
+
+                <p>
+                    Start with the course that matches your goals
+                    and build your cybersecurity knowledge step by step.
+                </p>
+
+            </div>
+
+
+            <div class="course-grid">
+
+
+                <!-- ETHICAL HACKING -->
+
+                <article class="course-card">
+
+                    <div class="course-card-top ethical-card">
+
+                        <span class="course-badge">
+                            FEATURED
+                        </span>
+
+                        <div class="course-icon">
+                            🛡️
+                        </div>
+
+                    </div>
+
+                    <div class="course-content">
+
+                        <span class="course-category">
+                            CYBERSECURITY
+                        </span>
+
+                        <h3>
+                            Ethical Hacking
+                        </h3>
+
+                        <p>
+                            Learn ethical hacking fundamentals,
+                            vulnerabilities, penetration testing and
+                            responsible security practices.
+                        </p>
+
+                        <div class="course-meta">
+                            <span>Beginner Friendly</span>
+                            <span>🔐</span>
+                        </div>
+
+                        <a
+                            href="../../Ethical%20Hacking/ethical%20hacking.html"
+                            class="course-btn">
+                            View Course →
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+                <!-- NETWORK SECURITY -->
+
+                <article class="course-card">
+
+                    <div class="course-card-top network-card">
+
+                        <span class="course-badge">
+                            POPULAR
+                        </span>
+
+                        <div class="course-icon">
+                            🌐
+                        </div>
+
+                    </div>
+
+                    <div class="course-content">
+
+                        <span class="course-category">
+                            NETWORK SECURITY
+                        </span>
+
+                        <h3>
+                            Network Security
+                        </h3>
+
+                        <p>
+                            Understand network protection, secure
+                            communication, threats, firewalls and
+                            network security fundamentals.
+                        </p>
+
+                        <div class="course-meta">
+                            <span>Career Focused</span>
+                            <span>🌐</span>
+                        </div>
+
+                        <a
+                            href="../../Network%20Security%20Certification/network%20security%20certification.html"
+                            class="course-btn">
+                            View Course →
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+                <!-- CORPORATE SECURITY -->
+
+                <article class="course-card">
+
+                    <div class="course-card-top corporate-card">
+
+                        <span class="course-badge">
+                            PROFESSIONAL
+                        </span>
+
+                        <div class="course-icon">
+                            🔐
+                        </div>
+
+                    </div>
+
+                    <div class="course-content">
+
+                        <span class="course-category">
+                            CORPORATE SECURITY
+                        </span>
+
+                        <h3>
+                            Corporate Security Training
+                        </h3>
+
+                        <p>
+                            Learn how organizations protect systems,
+                            networks, employees and sensitive business
+                            information from cyber threats.
+                        </p>
+
+                        <div class="course-meta">
+                            <span>Professional Skills</span>
+                            <span>🏢</span>
+                        </div>
+
+                        <a
+                            href="../../corporate-cybersecurity/corporate-cybersecurity.html"
+                            class="course-btn">
+                            View Course →
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= CTA ================= -->
+
+    <section class="track-cta">
+
+        <div class="container">
+
+            <div class="cta-box">
+
+                <div class="cta-content">
+
+                    <span class="section-tag">
+                        START LEARNING
+                    </span>
+
+                    <h2>
+                        Ready to Start Your
+                        <span>Cybersecurity Journey?</span>
+                    </h2>
+
+                    <p>
+                        Choose a course, develop practical skills and
+                        take your first step toward a future in cybersecurity.
+                    </p>
+
+                    <div class="cta-buttons">
+
+                        <a
+                            href="../../login.html"
+                            class="cta-primary">
+                            Start Learning →
+                        </a>
+
+                        <a
+                            href="../../index.html"
+                            class="cta-secondary">
+                            Back to Home
+                        </a>
+
+                    </div>
+
+                </div>
+
+                <div class="cta-symbol">
+                    🛡️
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        © 2026 EduFlex Academy.
+        All rights reserved.
+
+    </footer>
+
+</body>
+
+</html>

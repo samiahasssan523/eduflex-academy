@@ -1,0 +1,944 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Enrollment & Inquiry | EduFlex Academy</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Inter", sans-serif;
+            min-height: 100vh;
+
+            background:
+                radial-gradient(circle at top left,
+                    rgba(15, 43, 74, .12),
+                    transparent 35%),
+                radial-gradient(circle at bottom right,
+                    rgba(28, 61, 95, .10),
+                    transparent 35%),
+                #f7f4ec;
+
+            color: #14263d;
+            display: flex;
+            flex-direction: column;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .navbar {
+            width: 100%;
+            background: rgba(255, 253, 247, .94);
+            border-bottom: 1px solid #e3ded3;
+            backdrop-filter: blur(14px);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 17px 25px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            color: #102a43;
+            font-size: 22px;
+            font-weight: 800;
+        }
+
+        .logo span span {
+            color: #1d527d;
+        }
+
+        .logo-icon {
+            width: 39px;
+            height: 39px;
+
+            border-radius: 11px;
+
+            background: linear-gradient(135deg, #0d2945, #1d527d);
+
+            color: white;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            font-weight: 800;
+        }
+
+        .back-btn {
+            color: #607080;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .back-btn:hover {
+            color: #0d2945;
+        }
+
+        /* ================= FORM AREA ================= */
+
+        .register-wrapper {
+            flex: 1;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            padding: 55px 20px;
+        }
+
+        .register-card {
+            width: 100%;
+            max-width: 650px;
+
+            background: rgba(255, 253, 247, .97);
+
+            border: 1px solid #e2ddd2;
+            border-radius: 24px;
+
+            padding: 40px;
+
+            box-shadow:
+                0 25px 70px rgba(20, 38, 61, .12);
+        }
+
+        .register-icon {
+            width: 64px;
+            height: 64px;
+
+            margin: 0 auto 18px;
+
+            border-radius: 19px;
+
+            background: linear-gradient(135deg, #0d2945, #1d527d);
+
+            color: white;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            font-size: 27px;
+
+            box-shadow:
+                0 12px 30px rgba(13, 41, 69, .22);
+        }
+
+        .register-heading {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .register-heading h1 {
+            font-family: "Poppins", sans-serif;
+
+            font-size: 29px;
+
+            color: #102a43;
+
+            margin-bottom: 8px;
+        }
+
+        .register-heading p {
+            color: #6d7782;
+
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+
+            gap: 14px;
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        .form-group label {
+            display: block;
+
+            margin-bottom: 8px;
+
+            color: #263b50;
+
+            font-size: 13px;
+            font-weight: 700;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+
+            width: 100%;
+
+            padding: 13px 14px;
+
+            border: 1px solid #d9d5cb;
+            border-radius: 11px;
+
+            outline: none;
+
+            font-family: inherit;
+            font-size: 14px;
+
+            background: #fffdf8;
+            color: #172b40;
+
+            transition: .3s;
+        }
+
+        .form-group input,
+        .form-group select {
+            height: 50px;
+        }
+
+        .form-group textarea {
+            min-height: 115px;
+            resize: vertical;
+        }
+
+        /* ================= VALIDATION STATES ================= */
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+
+            border-color: #1d527d;
+
+            background: white;
+
+            box-shadow:
+                0 0 0 4px rgba(29, 82, 125, .10);
+        }
+
+        .form-group.valid input,
+        .form-group.valid select,
+        .form-group.valid textarea {
+
+            border-color: #3c8a5a;
+
+            background: #f5fbf7;
+        }
+
+        .form-group.invalid input,
+        .form-group.invalid select,
+        .form-group.invalid textarea {
+
+            border-color: #c94b43;
+
+            background: #fff8f7;
+        }
+
+        .validation-message {
+            display: none;
+
+            margin-top: 5px;
+
+            font-size: 11px;
+            font-weight: 600;
+        }
+
+        .form-group.invalid .validation-message {
+            display: block;
+            color: #b43e37;
+        }
+
+        .form-group.valid .validation-message {
+            display: block;
+            color: #33794c;
+        }
+
+        /* ================= SECTION LABEL ================= */
+
+        .form-section-title {
+
+            margin: 8px 0 18px;
+            padding-bottom: 9px;
+
+            border-bottom: 1px solid #e4dfd5;
+
+            color: #0d2945;
+
+            font-family: "Poppins", sans-serif;
+
+            font-size: 16px;
+        }
+
+        /* ================= TERMS ================= */
+
+        .terms {
+            display: flex;
+            align-items: flex-start;
+
+            gap: 9px;
+
+            margin: 5px 0 20px;
+
+            color: #707a85;
+
+            font-size: 12px;
+            line-height: 1.5;
+        }
+
+        .terms input {
+            margin-top: 3px;
+            accent-color: #0d2945;
+        }
+
+        .terms a {
+            color: #174e78;
+            font-weight: 700;
+        }
+
+        /* ================= BUTTON ================= */
+
+        .register-btn {
+            width: 100%;
+            height: 52px;
+
+            border: none;
+            border-radius: 12px;
+
+            background: linear-gradient(135deg, #0d2945, #1d527d);
+
+            color: white;
+
+            font-family: inherit;
+            font-size: 15px;
+            font-weight: 700;
+
+            cursor: pointer;
+
+            transition: .3s;
+        }
+
+        .register-btn:hover {
+            transform: translateY(-2px);
+
+            box-shadow:
+                0 13px 28px rgba(13, 41, 69, .24);
+        }
+
+        /* ================= MESSAGE ================= */
+
+        .message {
+            display: none;
+
+            margin-top: 16px;
+
+            padding: 13px;
+
+            border-radius: 10px;
+
+            text-align: center;
+
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .message.success {
+            display: block;
+
+            background: #edf7f0;
+            color: #23633d;
+        }
+
+        .message.error {
+            display: block;
+
+            background: #fbefed;
+            color: #9c3d32;
+        }
+
+        /* ================= FOOTER ================= */
+
+        .footer {
+            text-align: center;
+
+            padding: 20px;
+
+            border-top: 1px solid #e3ded3;
+
+            color: #7b858f;
+
+            font-size: 12px;
+
+            background: #fffdf7;
+        }
+
+        @media(max-width:600px) {
+
+            .nav-container {
+                padding: 15px 18px;
+            }
+
+            .register-wrapper {
+                padding: 35px 15px;
+            }
+
+            .register-card {
+                padding: 28px 22px;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+                gap: 0;
+            }
+
+            .register-heading h1 {
+                font-size: 25px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+
+    <header class="navbar">
+
+        <div class="nav-container">
+
+            <a href="index.html" class="logo">
+
+                <div class="logo-icon">
+                    E
+                </div>
+
+                <span>
+                    Edu<span>Flex</span>
+                </span>
+
+            </a>
+
+            <a href="index.html" class="back-btn">
+                ← Back to Home
+            </a>
+
+        </div>
+
+    </header>
+
+
+    <!-- ================= FORM ================= -->
+
+    <main class="register-wrapper">
+
+        <div class="register-card">
+
+            <div class="register-icon">
+                🛡️
+            </div>
+
+            <div class="register-heading">
+
+                <h1>
+                    Cybersecurity Enrollment
+                </h1>
+
+                <p>
+                    Enroll in a cybersecurity course or send us
+                    your inquiry about ethical hacking and security.
+                </p>
+
+            </div>
+
+
+            <form id="registerForm" novalidate>
+
+
+                <!-- PERSONAL INFORMATION -->
+
+                <h3 class="form-section-title">
+                    Personal Information
+                </h3>
+
+
+                <div class="form-row">
+
+                    <div class="form-group">
+
+                        <label for="firstName">
+                            First Name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="firstName"
+                            placeholder="Enter first name">
+
+                        <small class="validation-message"></small>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="lastName">
+                            Last Name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="lastName"
+                            placeholder="Enter last name">
+
+                        <small class="validation-message"></small>
+
+                    </div>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="email">
+                        Email Address
+                    </label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        placeholder="you@example.com">
+
+                    <small class="validation-message"></small>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="phone">
+                        Phone Number
+                    </label>
+
+                    <input
+                        type="tel"
+                        id="phone"
+                        placeholder="+92 300 1234567">
+
+                    <small class="validation-message"></small>
+
+                </div>
+
+
+                <!-- COURSE INFORMATION -->
+
+                <h3 class="form-section-title">
+                    Cybersecurity Learning Details
+                </h3>
+
+
+                <div class="form-group">
+
+                    <label for="course">
+                        Select Course
+                    </label>
+
+                    <select id="course">
+
+                        <option value="">
+                            Choose a cybersecurity course
+                        </option>
+
+                        <option value="ethical">
+                            Ethical Hacking
+                        </option>
+
+                        <option value="network">
+                            Network Security Certification
+                        </option>
+
+                        <option value="corporate">
+                            Corporate Cybersecurity
+                        </option>
+
+                    </select>
+
+                    <small class="validation-message"></small>
+
+                </div>
+
+
+                <div class="form-row">
+
+                    <div class="form-group">
+
+                        <label for="level">
+                            Current Skill Level
+                        </label>
+
+                        <select id="level">
+
+                            <option value="">
+                                Select skill level
+                            </option>
+
+                            <option value="beginner">
+                                Beginner
+                            </option>
+
+                            <option value="intermediate">
+                                Intermediate
+                            </option>
+
+                            <option value="advanced">
+                                Advanced
+                            </option>
+
+                        </select>
+
+                        <small class="validation-message"></small>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="inquiry">
+                            Inquiry Type
+                        </label>
+
+                        <select id="inquiry">
+
+                            <option value="">
+                                Select inquiry
+                            </option>
+
+                            <option value="enrollment">
+                                Course Enrollment
+                            </option>
+
+                            <option value="course-info">
+                                Course Information
+                            </option>
+
+                            <option value="career">
+                                Career Guidance
+                            </option>
+
+                            <option value="general">
+                                General Inquiry
+                            </option>
+
+                        </select>
+
+                        <small class="validation-message"></small>
+
+                    </div>
+
+                </div>
+
+
+                <!-- MESSAGE -->
+
+                <div class="form-group">
+
+                    <label for="messageText">
+                        Your Message
+                    </label>
+
+                    <textarea
+                        id="messageText"
+                        placeholder="Tell us what you want to learn or ask about cybersecurity..."></textarea>
+
+                    <small class="validation-message"></small>
+
+                </div>
+
+
+                <!-- TERMS -->
+
+                <label class="terms">
+
+                    <input
+                        type="checkbox"
+                        id="terms">
+
+                    <span>
+                        I agree to the
+                        <a href="#">Terms & Conditions</a>
+                        and
+                        <a href="#">Privacy Policy</a>.
+                    </span>
+
+                </label>
+
+
+                <button
+                    type="submit"
+                    class="register-btn">
+
+                    Submit Enrollment / Inquiry →
+
+                </button>
+
+
+                <div
+                    id="message"
+                    class="message">
+                </div>
+
+            </form>
+
+        </div>
+
+    </main>
+
+
+    <footer class="footer">
+
+        © 2026 EduFlex Academy.
+        All rights reserved.
+
+    </footer>
+
+
+    <!-- ================= JAVASCRIPT VALIDATION ================= -->
+
+    <script>
+
+        const form =
+            document.getElementById("registerForm");
+
+        const successMessage =
+            document.getElementById("message");
+
+
+        function validateField(input, condition, successText, errorText) {
+
+            const group = input.closest(".form-group");
+
+            const message = group.querySelector(".validation-message");
+
+            if (condition) {
+
+                group.classList.remove("invalid");
+                group.classList.add("valid");
+
+                message.textContent = "✓ " + successText;
+
+                return true;
+
+            } else {
+
+                group.classList.remove("valid");
+                group.classList.add("invalid");
+
+                message.textContent = errorText;
+
+                return false;
+            }
+        }
+
+
+        function validateForm() {
+
+            let valid = true;
+
+
+            const firstName =
+                document.getElementById("firstName");
+
+            const lastName =
+                document.getElementById("lastName");
+
+            const email =
+                document.getElementById("email");
+
+            const phone =
+                document.getElementById("phone");
+
+            const course =
+                document.getElementById("course");
+
+            const level =
+                document.getElementById("level");
+
+            const inquiry =
+                document.getElementById("inquiry");
+
+            const messageText =
+                document.getElementById("messageText");
+
+
+            valid &= validateField(
+                firstName,
+                firstName.value.trim().length >= 2,
+                "Valid name",
+                "Please enter your first name."
+            );
+
+
+            valid &= validateField(
+                lastName,
+                lastName.value.trim().length >= 2,
+                "Valid name",
+                "Please enter your last name."
+            );
+
+
+            valid &= validateField(
+                email,
+                /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value.trim()),
+                "Valid email",
+                "Please enter a valid email address."
+            );
+
+
+            valid &= validateField(
+                phone,
+                /^[0-9+\-\s]{10,18}$/.test(phone.value.trim()),
+                "Valid phone number",
+                "Please enter a valid phone number."
+            );
+
+
+            valid &= validateField(
+                course,
+                course.value !== "",
+                "Course selected",
+                "Please select a course."
+            );
+
+
+            valid &= validateField(
+                level,
+                level.value !== "",
+                "Skill level selected",
+                "Please select your skill level."
+            );
+
+
+            valid &= validateField(
+                inquiry,
+                inquiry.value !== "",
+                "Inquiry selected",
+                "Please select an inquiry type."
+            );
+
+
+            valid &= validateField(
+                messageText,
+                messageText.value.trim().length >= 10,
+                "Message looks good",
+                "Please enter at least 10 characters."
+            );
+
+
+            return Boolean(valid);
+        }
+
+
+        /* REAL-TIME VALIDATION */
+
+        document.querySelectorAll(
+            "#registerForm input, #registerForm select, #registerForm textarea"
+        ).forEach(function(field) {
+
+            field.addEventListener("blur", function() {
+
+                if (field.id !== "terms") {
+                    validateForm();
+                }
+
+            });
+
+        });
+
+
+        /* SUBMIT */
+
+        form.addEventListener("submit", function(event) {
+
+            event.preventDefault();
+
+            successMessage.className = "message";
+
+            if (!validateForm()) {
+
+                successMessage.className =
+                    "message error";
+
+                successMessage.textContent =
+                    "Please correct the highlighted fields before submitting.";
+
+                return;
+            }
+
+
+            const terms =
+                document.getElementById("terms");
+
+
+            if (!terms.checked) {
+
+                successMessage.className =
+                    "message error";
+
+                successMessage.textContent =
+                    "Please accept the Terms & Conditions.";
+
+                return;
+            }
+
+
+            successMessage.className =
+                "message success";
+
+            successMessage.textContent =
+                "✓ Your enrollment / inquiry has been submitted successfully!";
+
+
+            form.reset();
+
+            document.querySelectorAll(".form-group").forEach(function(group) {
+
+                group.classList.remove("valid");
+                group.classList.remove("invalid");
+
+            });
+
+        });
+
+    </script>
+
+</body>
+
+</html>
